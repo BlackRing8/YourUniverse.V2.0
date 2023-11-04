@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YourUniverse</title>
+    <!-- css pribadi -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- animetion -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- css luar -->
+    <link rel="stylesheet" href="dist/output.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <!-- Awal navbar -->
+
+    <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700">
+      <div class="px-3 py-3 lg:px-5 lg:pl-3">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center justify-start">
+            <button
+              data-drawer-target="logo-sidebar"
+              data-drawer-toggle="logo-sidebar"
+              aria-controls="logo-sidebar"
+              type="button"
+              class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+            >
+              <span class="sr-only">Open sidebar</span>
+              <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  clip-rule="evenodd"
+                  fill-rule="evenodd"
+                  d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+                ></path>
+              </svg>
+            </button>
+            <a class="flex ml-2 md:mr-24" href="index.html">
+              
+              <span class="self-center text-xl sm:text-2xl whitespace-nowrap dark:text-white">𝓨𝓸𝓾𝓻𝓤𝓷𝓲𝓿𝓮𝓻𝓼𝓮</span>
+            </a>
+          </div>
+          <div class="flex items-center">
+
+            <!-- button tema -->
+            <button
+            id="theme-toggle"
+            type="button"
+            class="text-white border bg-green-800 border-black hover:bg-neutral-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center mr-2 md:mr-0 dark:bg-yellow-400 dark:hover:bg-yellow-200 dark:focus:ring-blue-800 dark:text-white"
+          >
+            <svg id="theme-toggle-dark-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+            <svg id="theme-toggle-light-icon" class="hidden w-4 h-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </button>
+          <!-- Akhir button tema -->
+            <div class="flex items-center ml-3">
+              <div>
+                <button type="button" class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600" aria-expanded="false" data-dropdown-toggle="dropdown-user">
+                  <span class="sr-only">Open user menu</span>
+                  <img class="w-12 h-12 rounded-full" src="image/profilpic.jpeg" alt="user photo" />
+                </button>
+              </div>
+              <div class="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded shadow dark:bg-gray-700 dark:divide-gray-600" id="dropdown-user">
+                <div class="px-4 py-3" role="none">
+                  <p class="text-sm text-gray-900 dark:text-white" role="none">BlackRing</p>
+                  <p class="text-sm font-medium text-gray-900 truncate dark:text-gray-300" role="none">@BlackRing.Side</p>
+                </div>
+                <ul class="py-1" role="none">
+                  <li>
+                    <a href="profil-index.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">My Universe</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Comunity</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 dark:text-gray-300 dark:hover:bg-gray-600 dark:hover:text-white" role="menuitem">Log out</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <aside id="logo-sidebar" class="fixed top-0 left-0 z-40 w-60 h-screen pt-20 transition-transform -translate-x-full bg-white sm:translate-x-0 dark:bg-gray-800 dark:border-gray-700" aria-label="Sidebar">
+      <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
+        <ul class="space-y-2 font-medium">
+          <li>
+            <a href="index.html" class="flex items-center p-2 bg-gray-300 dark:bg-gray-600 text-gray-900 rounded-lg dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700 group">
+              <svg class="w-5 h-5 text-black transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 22 21">
+                <path d="M16.975 11H10V4.025a1 1 0 0 0-1.066-.998 8.5 8.5 0 1 0 9.039 9.039.999.999 0 0 0-1-1.066h.002Z" />
+                <path d="M12.5 0c-.157 0-.311.01-.565.027A1 1 0 0 0 11 1.02V10h8.975a1 1 0 0 0 1-.935c.013-.188.028-.374.028-.565A8.51 8.51 0 0 0 12.5 0Z" />
+              </svg>
+              <span class="ml-3">Home </span>
+            </a>
+          </li>
+          <li>
+            <a href="YuSearch.html" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  d="M6.143 0H1.857A1.857 1.857 0 0 0 0 1.857v4.286C0 7.169.831 8 1.857 8h4.286A1.857 1.857 0 0 0 8 6.143V1.857A1.857 1.857 0 0 0 6.143 0Zm10 0h-4.286A1.857 1.857 0 0 0 10 1.857v4.286C10 7.169 10.831 8 11.857 8h4.286A1.857 1.857 0 0 0 18 6.143V1.857A1.857 1.857 0 0 0 16.143 0Zm-10 10H1.857A1.857 1.857 0 0 0 0 11.857v4.286C0 17.169.831 18 1.857 18h4.286A1.857 1.857 0 0 0 8 16.143v-4.286A1.857 1.857 0 0 0 6.143 10Zm10 0h-4.286A1.857 1.857 0 0 0 10 11.857v4.286c0 1.026.831 1.857 1.857 1.857h4.286A1.857 1.857 0 0 0 18 16.143v-4.286A1.857 1.857 0 0 0 16.143 10Z"
+                />
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Universe for You</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 text-gray-500 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-900 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M15.133 10.632v-1.8a5.406 5.406 0 0 0-4.154-5.262.955.955 0 0 0 .021-.106V1.1a1 1 0 0 0-2 0v2.364a.946.946 0 0 0 .021.106 5.406 5.406 0 0 0-4.154 5.262v1.8C4.867 13.018 3 13.614 3 14.807 3 15.4 3 16 3.538 16h12.924C17 16 17 15.4 17 14.807c0-1.193-1.867-1.789-1.867-4.175ZM4 4a1 1 0 0 1-.707-.293l-1-1a1 1 0 0 1 1.414-1.414l1 1A1 1 0 0 1 4 4ZM2 8H1a1 1 0 0 1 0-2h1a1 1 0 1 1 0 2Zm14-4a1 1 0 0 1-.707-1.707l1-1a1 1 0 1 1 1.414 1.414l-1 1A1 1 0 0 1 16 4Zm3 4h-1a1 1 0 1 1 0-2h1a1 1 0 1 1 0 2ZM6.823 17a3.453 3.453 0 0 0 6.354 0H6.823Z"/>
+            </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap ">Notification</span>
+              <span class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium text-blue-800 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300">3</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg
+                class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 20 18"
+              >
+                <path
+                  d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
+                />
+              </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Search Someone</span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
+            </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Massage</span>
+            </a>
+          </li>
+          
+            <a href="#" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
+              <svg class="w-6 h-6 text-gray-500 group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3"/>
+            </svg>
+              <span class="flex-1 ml-3 whitespace-nowrap">Log out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+    <!-- akhir navbar  -->
+
+    <!-- body content -->
+    <div class="sm:ml-60 flex bg-gray-200 dark:bg-black justify-center " >
+      
+      <div class="max-w-sm w-full">
+        <div class="rounded-lg dark:border-gray-700 mt-20 mb-24" data-aos="fade-up">
+          <div class="flex flex-col h-auto mb-2 rounded bg-red-500 dark:bg-gray-800">
+            <div class="w-full h-full flex justify-center items-center bg-black">
+              <img class="w-full h-auto " src="image/profilpic.jpeg"/>
+            </div>
+            <div class="flex w-full h-32 bg-white dark:bg-black">
+              <div class="w-auto h-auto mt-3 ml-2">
+                <div class="flex -flex-wrap mb-1 mt-1">
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.248 15C.22 11.77 2.275 4.232 9.466 4.232V2.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861V8.539C2.275 9.616 1.248 15 1.248 15Z"/>
+                  </svg>
+                </div>
+                <h1 class="font-semibold  text-black dark:text-white">@BlackRing.Side</h1>
+                <p class=" text-black dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, deleniti.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid h-auto w-full bg-gray-100 dark:bg-gray-900 mb-2 pb-5 "data-aos="fade-up">
+            <h1 class="text-lg font-semibold text-black dark:text-white m-2">Universe for you</h1>
+            <div class="grid grid-cols-2 w-full gap-4">
+              <a class="flex rounded bg-white h-28 dark:bg-gray-800" href="">
+                <div class="flex w-full">
+                  <div class="flex w-20 h-28 items-center justify-center">
+                    <img class="h-24 w-18rounded-md" src="image/cover/cover.png"/>
+                  </div>
+                  <div class="ml-1 h-full">
+                    <h1 class="mt-2 mb-0 font-semibold text-sm text-black dark:text-white">Dibalik layar sekolah</h1>
+                    <p class="text-xs mt-3 text-black dark:text-gray-200">Kelompok Polisi <br>Perang melawan <br>Mafia narkoba.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="flex rounded bg-white h-28 dark:bg-gray-800" href="">
+                <div class="flex w-full">
+                  <div class="flex w-20 h-28 items-center justify-center">
+                    <img class="h-24 w-18rounded-md" src="image/cover/cover2.jpeg"/>
+                  </div>
+                  <div class="ml-1 h-full">
+                    <h1 class="mt-2 mb-0 font-semibold text-sm text-black dark:text-white">little peace of<br>world</h1>
+                    <p class="text-xs mt-3 text-black dark:text-gray-200">Kelompok Polisi <br>Perang melawan <br>Mafia narkoba.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="flex rounded bg-white h-28 dark:bg-gray-800" href="">
+                <div class="flex w-full">
+                  <div class="flex w-20 h-28 items-center justify-center">
+                    <img class="h-24 w-18rounded-md" src="image/cover/enhel.jpeg"/>
+                  </div>
+                  <div class="ml-1 h-full">
+                    <h1 class="mt-2 mb-0 font-semibold text-sm text-black dark:text-white">Attack Of System</h1>
+                    <p class="text-xs mt-3 text-black dark:text-gray-200">Kelompok Polisi <br>Perang melawan <br>Mafia narkoba.</p>
+                  </div>
+                </div>
+              </a>
+              <a class="flex rounded bg-white h-28 dark:bg-gray-800" href="">
+                <div class="flex w-full">
+                  <div class="flex w-20 h-28 items-center justify-center">
+                    <img class="h-24 w-18rounded-md" src="image/cover/poster1.jpg"/>
+                  </div>
+                  <div class="ml-1 h-full">
+                    <h1 class="mt-2 mb-0 font-semibold text-sm text-black dark:text-white">ElNarko</h1>
+                    <p class="text-xs mt-3 text-black dark:text-gray-200">Kelompok Polisi <br>Perang melawan <br>Mafia narkoba.</p>
+                  </div>
+                </div>
+              </a>
+              
+            </div>
+          </div>
+
+          <div class="flex flex-col h-auto mb-2 rounded dark:bg-gray-800"data-aos="fade-up">
+            <div class="w-full h-full flex justify-center items-center bg-black">
+              <img class="w-full h-auto " src="image/logo 4.jpg"/>
+            </div>
+            <div class="flex w-full h-32 bg-white dark:bg-black">
+              <div class="w-auto h-auto mt-3 ml-2">
+                <div class="flex -flex-wrap mb-1 mt-1">
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.248 15C.22 11.77 2.275 4.232 9.466 4.232V2.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861V8.539C2.275 9.616 1.248 15 1.248 15Z"/>
+                  </svg>
+                </div>
+                <h1 class="font-semibold  text-black dark:text-white">@BlackRing.Side</h1>
+                <p class=" text-black dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, deleniti.</p>
+              </div>
+            </div>
+          </div>
+
+          
+         
+          <section  data-aos="fade-up">
+            <a class="flex flex-wrap  h-48 mb-4 rounded bg-white dark:bg-gray-800">
+              <div class="w-28 h-48 flex justify-center items-center">
+                <img src="image/cover/alice.png" class="w-24 h-40 rounded-lg"/>
+              </div>
+              <div>
+                <h1 class="mt-3 ml-4 font-bold dark:text-white">@blackRing.Side</h1>
+                <h1 class="ml-4 font-semibold dark:text-white">Rundown</h1>
+                <h1 class="ml-4 dark:text-white">(Action),(Comedy),(Family)</h1>
+                <h1 class="ml-4 text-gray-500 dark:text-gray-300">2 Seoson, 16 Chapter</h1>
+                <h1 class="ml-4 text-gray-500 dark:text-white">100k Likes, 30k Share</h1>
+                
+                <h1 class="ml-4 dark:text-white">On Going</h1>
+              </div>
+            </a>
+          </section>
+
+          <div class="flex w-full justify-center"data-aos="fade-up">
+            <a class="w-72 h-auto mb-4 rounded-lg bg-white dark:bg-gray-800">
+              <div class="flex flex-wrap h-20 w-full ml-4 items-center">
+                <img class="h-10 w-10 rounded-full border-2 border-black dark:border-white" src="image/profilpic.jpeg"/>         
+                <h1 class=" font-bold ml-2 dark:text-white">@blackRing.Side</h1>
+              </div>
+              <div class="ml-4">
+                <h1 class="dark:text-white">Lorem ipsum dolor sit.</h1>
+              </div>
+              <div class="flex m-4"> 
+                <svg class="w-6 h-6 mr-4 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                <svg class="w-6 h-6 mr-4 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                    <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
+                </svg>
+                <svg class="w-6 h-6 text-black dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.248 15C.22 11.77 2.275 4.232 9.466 4.232V2.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861V8.539C2.275 9.616 1.248 15 1.248 15Z"/>
+                </svg>
+              </div>
+            </a>
+          </div>
+          <div class="flex flex-col h-auto mb-2 rounded dark:bg-gray-800"data-aos="fade-up">
+            <div class="w-full h-full flex justify-center items-center rounded-t-lg bg-black">
+              <img class="w-full h-auto rounded-lg" src="image/logo 4.jpg"/>
+            </div>
+            <div class="flex w-full h-32 bg-white dark:bg-black">
+              <div class="w-auto h-auto mt-3 ml-2">
+                <div class="flex -flex-wrap mb-1 mt-1">
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m7 10 2 2 4-4m6 2a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 mr-4 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 18">
+                      <path d="M18 0H2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h3.546l3.2 3.659a1 1 0 0 0 1.506 0L13.454 14H18a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2Zm-8 10H5a1 1 0 0 1 0-2h5a1 1 0 1 1 0 2Zm5-4H5a1 1 0 0 1 0-2h10a1 1 0 1 1 0 2Z"/>
+                  </svg>
+                  <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1.248 15C.22 11.77 2.275 4.232 9.466 4.232V2.079a1.025 1.025 0 0 1 1.644-.862l5.479 4.307a1.108 1.108 0 0 1 0 1.723l-5.48 4.307a1.026 1.026 0 0 1-1.643-.861V8.539C2.275 9.616 1.248 15 1.248 15Z"/>
+                  </svg>
+                </div>
+                <h1 class="font-semibold  text-black dark:text-white">@BlackRing.Side</h1>
+                <p class=" text-black dark:text-white">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, deleniti.</p>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+    <!-- Akkhir content -->
+
+    <!-- footer -->
+
+    <footer class="fixed bottom-0 left-0 z-40 w-full p-4 bg-white border-t border-gray-200 shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+      <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="" class="hover:underline">YourUniverse™</a>. All Rights Reserved. </span>
+      
+    </footer>
+
+    <!-- Akhir footer -->
+    <!-- animetion -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+
+    <!-- Script out -->
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.0.0/flowbite.min.js"></script>
+
+    <!-- Sript pribadi -->
+    <script src="script.js"></script>
+  </body>
+</html>
